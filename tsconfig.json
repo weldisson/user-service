@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "rootDirs": [
+            "src/"
+        ],
+        "outDir": "build/",
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "types": [
+        "node",
+        "aws-sdk"
+    ]
+}
