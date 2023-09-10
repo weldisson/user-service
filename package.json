@@ -9,7 +9,7 @@
     "test": "jest --no-watchman --silent",
     "test-cov": "jest --no-watchman --silent --coverage",
     "deploy-prod": "npm run clean && npm run build && sls deploy --stage prod --region us-east-1 ",
-    "local-server": "npm run watch &  sls offline start -s dev",
+    "local-server": "npm run watch & sls offline start -s dev",
     "watch": "tsc -w"
   },
   "keywords": [],
