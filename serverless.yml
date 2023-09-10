@@ -21,11 +21,6 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${env:USER_TABLE}"
-        # Add this statement to allow 'Scan' operation
-        - Effect: Allow
-          Action:
-            - dynamodb:Scan
-          Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${env:USER_TABLE}"
 functions:
   create:
     handler: build/index.createUserHandler
