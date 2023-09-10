@@ -21,10 +21,8 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Deploy to AWS
-      uses: aaronpanch/action-serverless@master
-      with:
-        args: deploy
+    - name: Build and Deploy to AWS
+      run: npm run deploy-prod
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
