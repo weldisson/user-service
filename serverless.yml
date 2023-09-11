@@ -9,6 +9,14 @@ provider:
   region: us-east-1
   environment:
     USER_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Scan
+            - dynamodb:PutItem
+          Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${env:USER_TABLE}"
 functions:
   create:
     handler: build/index.createUserHandler
@@ -17,12 +25,13 @@ functions:
           path: user
           method: post
           cors: true
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:Scan
-          - dynamodb:PutItem
-        Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${env:USER_TABLE}"
+  get:
+    handler: build/index.getUserHandler
+    events:
+      - http:
+          path: user
+          method: get
+          cors: true
   
 resources:
   Resources:

@@ -1,5 +1,5 @@
 import { CreateUserUseCase } from "./CreateUserUseCase";
-import UserRepository from "../../../infrastructure/users/UserRepository";
+import UserRepository from "../../../infrastructure/repository/users/UserRepository";
 import { CreateUserRequest } from "../../../presentation/users/api/requests/CreateUserRequest";
 
 describe("CreateUserUseCase", () => {

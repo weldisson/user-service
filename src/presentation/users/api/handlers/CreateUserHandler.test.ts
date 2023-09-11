@@ -1,12 +1,12 @@
 import { CreateUserHandler } from "./CreateUserHandler";
 import { CreateUserValidator } from "../validator/CreateUserValidator";
 import { ValidationErrorResponse } from "../validator/ValidationErrorResponse";
-import UserRepository from "../../../../infrastructure/users/UserRepository";
+import UserRepository from "../../../../infrastructure/repository/users/UserRepository";
 import { CreateUserUseCase } from "../../../../application/users/usecase/CreateUserUseCase";
 
 jest.mock("../validator/CreateUserValidator");
 jest.mock("../validator/ValidationErrorResponse");
-jest.mock("../../../../infrastructure/users/UserRepository");
+jest.mock("../../../../infrastructure/repository/users/UserRepository");
 jest.mock("../../../../application/users/usecase/CreateUserUseCase");
 
 describe("CreateUserHandler", () => {

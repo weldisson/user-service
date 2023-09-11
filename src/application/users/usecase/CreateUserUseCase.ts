@@ -1,5 +1,5 @@
 import { User } from "../../../domain/users/Users";
-import UserRepository from "../../../infrastructure/users/UserRepository";
+import UserRepository from "../../../infrastructure/repository/users/UserRepository";
 import { CreateUserRequest } from "../../../presentation/users/api/requests/CreateUserRequest";
 
 export class CreateUserUseCase {
