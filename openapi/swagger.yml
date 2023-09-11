@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: User Service API
+  description: API for managing user data
+  version: 1.0.0
+servers:
+  - url: https://blkc56jbul.execute-api.us-east-1.amazonaws.com/prod
+
+paths:
+  /user:
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Weldisson
+                email:
+                  type: string
+                  example: weldisson.araujo34@gmail.com
+                phone:
+                  type: string
+                  example: 21979052811
+                document:
+                  type: string
+                  example: 281109645
+              required:
+                - name
+                - email
+                - phone
+      responses:
+        '200':
+          description: User created successfully
+        '400':
+          description: Bad request - Invalid input data
+
+    get:
+      summary: Get user by email
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+          example: weldisson.araujo34@gmail.com
+      responses:
+        '200':
+          description: User found
+        '404':
+          description: User not found
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        error:
+          type: string
