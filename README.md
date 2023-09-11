@@ -1,4 +1,4 @@
-# Serverless Framework Project
+# User service
 [![Coverage Status](https://coveralls.io/repos/github/weldisson/user-service/badge.svg)](https://coveralls.io/github/weldisson/user-service)
 
 ## Requirements
