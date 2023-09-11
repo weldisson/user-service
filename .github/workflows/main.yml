@@ -24,8 +24,8 @@ jobs:
     - name: Run test coverage
       run: npm run test-cov
 
-    - name: Upload coverage to Coveralls
-      run: npx coveralls < coverage/lcov.info
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
 
     - name: Build and Deploy to AWS
       run: npm run deploy-prod
