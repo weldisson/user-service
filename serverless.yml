@@ -7,8 +7,6 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: us-east-1
-  environment:
-    USER_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iam:
     role:
       statements:
@@ -37,7 +35,6 @@ resources:
   Resources:
     DynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: Retain
       Properties:
         AttributeDefinitions:
           -
