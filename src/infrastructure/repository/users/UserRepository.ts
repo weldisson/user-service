@@ -1,5 +1,5 @@
 import { DynamoDB } from "aws-sdk";
-import { User } from "../../domain/users/Users";
+import { User } from "../../../domain/users/Users";
 
 export default class UserRepository {
   private dynamo: DynamoDB.DocumentClient;
